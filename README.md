@@ -4,13 +4,19 @@ An entire django application deployment in one command. Uses [pico_django.py](ht
 
 Dependencies
 ============
-* python ^3.6
+* python ^3.8
 * django
 * zappa
 
 Prerequisites
 =============
-You will need an AWS account and your [AWS credentials file](https://aws.amazon.com/blogs/security/a-new-and-standardized-way-to-manage-credentials-in-the-aws-sdks/) must be properly installed
+You will need an AWS account and your [AWS credentials file](https://aws.amazon.com/blogs/security/a-new-and-standardized-way-to-manage-credentials-in-the-aws-sdks/) must be properly installed and the aws profile you use will need the following permissions for deploying/updating/undeploying etc:
+
+* iam:CreateRole
+* iam:GetRole
+* iam:PassRole
+* iam:PutRolePolicy
+
 
 Install
 =======

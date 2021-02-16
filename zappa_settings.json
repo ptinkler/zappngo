@@ -4,8 +4,8 @@
         "django_settings": "pico_django",
         "profile_name": "default",
         "project_name": "zappngo",
-        "runtime": "python3.6",
+        "runtime": "python3.8",
         "keep_warm": false,
-        "s3_bucket": "zappa-zappngo"
+        "s3_bucket": "lambda"
     }
 }

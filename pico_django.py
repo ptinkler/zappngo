@@ -8,10 +8,10 @@ DATABASES = {'default': {}}
 
 
 def index(request, name):
-    return HttpResponse('Hello {name}!'.format(name=(name or 'World')))
+    return HttpResponse('Hello {name}!'.format(name=name or 'World'))
 
 urlpatterns = [
-    url(r'^(?P<name>\w+)?$', index)
+    url(r'^(?P<name>\w+|)$', index)
 ]
 
 SECRET_KEY = "not so secret"
