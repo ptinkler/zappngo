@@ -1,2 +1,35 @@
+# Every package, pinned. The two we actually use are django and zappa; the rest are what they pull in.
+# Resolved for Python 3.13 using only releases at least 14 days old, so nothing brand new gets in.
+argcomplete==3.7.2
+asgiref==3.13.0
+boto3==1.43.126
+botocore==1.43.126
+certifi==2026.10.23
+cfn-flip==1.3.0
+charset-normalizer==3.5.2
+click==8.5.1
 django==6.1.3
+durationpy==0.11
+hjson==3.1.0
+idna==3.20
+jmespath==1.1.0
+markupsafe==3.0.4
+packaging==26.3
+pip==26.3
+placebo==0.9.0
+python-dateutil==2.9.0.post0
+python-slugify==9.1.3
+pyyaml==6.0.3
+requests==2.34.2
+s3transfer==0.19.3
+setuptools==84.2.1
+six==1.17.0
+sqlparse==0.6.1
+text-unidecode==1.3
+toml==0.10.2
+tqdm==4.70.1
+troposphere==4.11.1
+urllib3==2.8.0
+werkzeug==3.1.9
+wheel==0.48.0
 zappa==0.63.0

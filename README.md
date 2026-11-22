@@ -42,3 +42,13 @@ Later changes: `zappa update dev`. Remove everything: `zappa undeploy dev`.
 | `DJANGO_SECRET_KEY` | random per start | Nothing here signs or stores anything, so no key is needed; set one if the app ever uses sessions or signing. |
 
 **This is a demo. It has no authentication and no rate limiting; do not run anything important on it.**
+
+## Dependencies
+
+`requirements.txt` pins every package. Dependabot opens a PR when one has a security fix. To rebuild it by hand
+(only releases at least 14 days old, as a guard against freshly published malicious versions):
+
+```
+printf 'django\nzappa\n' | uv pip compile - --python-version 3.13 --no-annotate --no-header \
+  --exclude-newer "$(date -u -d '14 days ago' +%F)T00:00:00Z" > requirements.txt
+```
