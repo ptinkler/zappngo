@@ -9,8 +9,8 @@ AWS Lambda behind API Gateway.
 
 ## Prerequisites
 
-- Python 3.13 (it must match the `python3.13` Lambda runtime in `zappa_settings.json`, because Zappa packages
-  the virtualenv it runs in).
+- [uv](https://docs.astral.sh/uv/). It installs Python 3.13 for you if you don't have it; the version must
+  match the `python3.13` Lambda runtime in `zappa_settings.json`, because Zappa packages the virtualenv it runs in.
 - An AWS account and a [credentials file](https://docs.aws.amazon.com/sdkref/latest/guide/file-format.html). The
   profile you use needs permission to create the deployment's IAM role, Lambda function, API Gateway and S3
   bucket (Zappa's [minimum policy](https://github.com/zappa/Zappa#custom-aws-iam-roles-and-policies-for-deployment)
@@ -23,11 +23,14 @@ AWS Lambda behind API Gateway.
 2. Install and deploy:
 
    ```
-   python3.13 -m venv .venv
+   uv venv --python 3.13
+   uv pip install -r requirements.txt
    . .venv/bin/activate
-   pip install -r requirements.txt
    zappa deploy dev
    ```
+
+   Zappa has to run from the activated virtualenv: it bundles the packages in the environment it runs in, so
+   `uv run --with ...` or a global `zappa` would deploy a package without Django in it.
 
 Later changes: `zappa update dev`. Remove everything: `zappa undeploy dev`.
 
